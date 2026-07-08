@@ -26,12 +26,14 @@ import RoleMgmt from './views/RoleMgmt';
 import ContractMgmt from './views/ContractMgmt';
 
 import Notifications from './views/Notifications';
+import ProductPreview from './views/ProductPreview';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginView />} />
+        <Route path="/product-preview" element={<ProductPreview />} />
         <Route path="/" element={<Navigate to="/login" replace />} />
         
         <Route element={<MainLayout />}>

@@ -140,7 +140,7 @@ export default function ProductMgmt() {
       setActiveProduct(product);
       setPriceAdjModalOpen(true);
     } else if (action === '预览') {
-      showToastMsg('预览功能开发中');
+      window.open(`/product-preview?id=${product.id}`, '_blank');
     } else {
       showToastMsg(`此功能开发中: ${action}`);
     }

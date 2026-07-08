@@ -156,6 +156,15 @@ const MOCK_PRODUCTS: Product[] = [
 ];
 
 export const productService = {
+  async getProductById(id: string): Promise<Product | null> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const product = MOCK_PRODUCTS.find(p => p.id === id);
+        resolve(product || null);
+      }, 300); // 300ms simulated network delay
+    });
+  },
+
   async getProducts(params?: { search?: string; auditStatus?: string; salesStatus?: string; spuStatus?: string }): Promise<Product[]> {
     return new Promise((resolve) => {
       setTimeout(() => {
